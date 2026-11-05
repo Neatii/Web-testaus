@@ -1,5 +1,3 @@
-/* global localStorage */
-
 /**
  * @typedef {Object} Task
  * @property {string} id
@@ -158,8 +156,8 @@ export function toggleTaskCompletion(task, now) {
     status: nextCompleted
       ? 'done'
       : task.status === 'done'
-      ? 'todo'
-      : task.status,
+        ? 'todo'
+        : task.status,
     updatedAt: now,
   };
 }

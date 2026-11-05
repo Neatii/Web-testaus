@@ -1,0 +1,39 @@
+***Tehtävät testit***
+Tehtävän lataus (loadTasks()):
+Palauttaa tyjän taulukon, jos localStorage on tyjä.
+Palauttaa tallennetut tehtävät oikein.
+
+Tallenna tehtävät (saveTasks()):
+tehtävät tallentuvat localStorageen.
+
+Tehtävien lajittelu (sortTasks()):
+Testataan, että tehtävät järjestyvät oikein.
+
+Tehtävän luonti (createTask()):
+Luo tehtävän onnistuneesti oikeilla tiedoilla.
+
+Päivitä tehtävä (updateTask()):
+Päivittää tehtävän tiedot oikein.
+
+toggleTaskCompletion():
+Testataan, että tehtävän tila vaihtuu.
+
+generateId():
+* Testataan, että generoitu id on merkkijono
+
+escapeHtml():
+* Annetaan funktiolle merkkijono, joka sisältää HTML-tageja.
+Odotettu tulos: HTML-erikoismerkit muunnetaan turvalliseen muotoon
+eikä merkkijono sisällä seuoritettavaa HTML- tai JAvaScrip-koodia.
+* Annetaan funktiolle tavallinen teksti ilman HTML-merkkejä.
+Odotettu tulos: Teksti palautuu muuttumattomana.
+
+statusLabel():
+* Annetaan funktiolle arvo, joka kuvaa valmista tehtävää.
+Odotettu tulos: Funktio palauttaa valmista tehtävää kuvaavan tekstin.
+* Annetaan funktiolle arvo, joka kuvaa keskeneräistä tehtävää.
+Odotettu tulos: Funktio palauttaa keskeneräistä tehtävää kuvaavan tekstin.
+
+
+
+
