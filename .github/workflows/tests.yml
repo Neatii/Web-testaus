@@ -24,14 +24,6 @@ jobs:
       - name: Run unit tests
         run: npm test
 
-           - name: Start server
-        run: npm run dev &
-        
-      - name: Wait and check server
-        run: |
-          sleep 10
-          curl http://localhost:5173/health
-
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
