@@ -26,13 +26,13 @@ jobs:
 
       - name: Start server
         run: |
-        npm run dev &
-        sleep 10
+          npm run dev &
+          sleep 10
 
       - name: Run Cypress tests
         run: npx cypress run
-   #     uses: cypress-io/github-action@v6
-   #     with:
+    #     uses: cypress-io/github-action@v6
+    #     with:
     #      start: npm run dev
     #      wait-on: 'http://localhost:5173'
     #      wait-on-timeout: 120
