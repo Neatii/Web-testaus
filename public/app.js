@@ -45,9 +45,14 @@ const list = /** @type {HTMLUListElement} */ (
 const emptyState = /** @type {HTMLElement} */ (
   document.getElementById('empty-state')
 );
+const filterLow = document.querySelector('.pill.low'); // Lopputyö muutos
+const filterMedium = document.querySelector('.pill.medium'); // Lopputyö muutos
+const filterHigh = document.querySelector('.pill.high'); // Lopputyö muutos
+const filterAll = document.querySelector('.pill.all'); // Lopputyö muutos
 
 // State
 let tasks = loadTasks();
+let activeFilter = 'all'; // Lopputyön muutos
 
 // Render
 function render() {
@@ -58,7 +63,13 @@ function render() {
   }
   emptyState.style.display = 'none';
 
-  sortTasks(tasks).forEach((t) => {
+  // Lopputyö muutos
+  const visibleTasks =
+    activeFilter === 'all'
+      ? tasks
+      : tasks.filter((t) => t.priority === activeFilter);
+
+  sortTasks(visibleTasks).forEach((t) => {
     const li = document.createElement('li');
     li.className = 'task' + (t.completed ? ' done' : '');
     li.dataset.id = t.id;
@@ -164,6 +175,27 @@ list.addEventListener('click', (e) => {
     saveTasks(tasks);
     render();
   }
+});
+
+//Lopputyö muutos
+filterLow.addEventListener('click', () => {
+  activeFilter = 'low';
+  render();
+});
+
+filterMedium.addEventListener('click', () => {
+  activeFilter = 'medium';
+  render();
+});
+
+filterHigh.addEventListener('click', () => {
+  activeFilter = 'high';
+  render();
+});
+
+filterAll.addEventListener('click', () => {
+  activeFilter = 'all';
+  render();
 });
 
 // Initial paint
